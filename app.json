@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ReactNativeTesting",
-    "slug": "ReactNativeTesting",
+    "name": "Light Chat",
+    "slug": "Light Chat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
