@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Image, View } from 'react-native';
-import { Text, Layout, Drawer, DrawerItem, IndexPath, withStyles } from '@ui-kitten/components';
+import { Text, Layout, withStyles } from '@ui-kitten/components';
 
 import styles from './contact-information.style';
 
