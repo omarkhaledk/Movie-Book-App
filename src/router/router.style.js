@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = (theme) => StyleSheet.create({
     drawerContent: {
-        height: '100%'
+        height: '100%',
+        paddingTop: 14
     },
     drawerItem: {
         fontSize: 16
