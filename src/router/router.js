@@ -7,15 +7,15 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { observer } from 'mobx-react';
 
 import DrawerContent from './drawer-content/drawer-content';
-import HomeScreen from "../screens/home/home";
-import { AboutScreen } from "../screens/about";
+import ConversationsScreen from "../screens/conversations/conversations";
+import SettingsScreen from "../screens/settings/settings";
 import { withStyles } from '@ui-kitten/components';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
 const SCREENS = [
-    { name: "Home", component: HomeScreen, isDrawerItem: true },
-    { name: "About", component: AboutScreen, isDrawerItem: true }
+    { name: "Conversations", component: ConversationsScreen, isDrawerItem: true },
+    { name: "Settings", component: SettingsScreen, isDrawerItem: true }
 ];
 
 function AppContainer(props) {

@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { observer } from 'mobx-react-lite';
+import { Button, Layout, withStyles } from '@ui-kitten/components';
 
-import { Button, Layout, Text, withStyles } from '@ui-kitten/components';
-import styles from "./home.style";
+import styles from './settings.style';
 
-const HomeScreen = ({ eva, stores }) => {
-
+const SettingsScreen = ({ eva, stores }) => {
     const { style } = eva;
     const { themeStore } = stores;
 
@@ -17,4 +15,4 @@ const HomeScreen = ({ eva, stores }) => {
     );
 }
 
-export default withStyles(observer(HomeScreen), styles);
+export default withStyles(SettingsScreen, styles)
