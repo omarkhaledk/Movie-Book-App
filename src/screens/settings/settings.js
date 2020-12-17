@@ -1,16 +1,24 @@
 import React from 'react';
 
-import { Button, Layout, withStyles } from '@ui-kitten/components';
+import { Layout, withStyles, Divider } from '@ui-kitten/components';
+import { View } from 'react-native';
 
 import styles from './settings.style';
 
+import ThemeChanging from '../../components/theme-changing/theme-changing';
+
 const SettingsScreen = ({ eva, stores }) => {
     const { style } = eva;
-    const { themeStore } = stores;
 
     return (
         <Layout style={style.container}>
-            <Button style={{ marginVertical: 4 }} onPress={() => themeStore.toggleTheme()}>TOGGLE THEME</Button>
+
+            <View style={style.item}>
+                <ThemeChanging stores={stores} />
+            </View>
+
+            <Divider style={style.divider} />
+
         </Layout>
     );
 }

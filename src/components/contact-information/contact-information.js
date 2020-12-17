@@ -6,7 +6,7 @@ import { Text, Layout, withStyles } from '@ui-kitten/components';
 
 import styles from './contact-information.style';
 
-const profilePic = require('../../assets/profile-pic.jpg');
+const profilePic = require('../../../assets/profile-pic.jpg');
 
 const ContactInfo = ({ eva }) => {
     const { style } = eva;
