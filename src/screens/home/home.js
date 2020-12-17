@@ -1,21 +1,18 @@
 import React from 'react';
 
-import { ThemeContext } from '../../theme-context';
 import { observer } from 'mobx-react-lite';
 
 import { Button, Layout, Text, withStyles } from '@ui-kitten/components';
 import styles from "./home.style";
 
-const HomeScreen = ({ eva }) => {
-
-    const themeContext = React.useContext(ThemeContext);
+const HomeScreen = ({ eva, stores }) => {
 
     const { style } = eva;
+    const { themeStore } = stores;
 
     return (
         <Layout style={style.container}>
-            {/* <Text category='h1'>Home page</Text> */}
-            <Button style={{ marginVertical: 4 }} onPress={themeContext.toggleTheme}>TOGGLE THEME</Button>
+            <Button style={{ marginVertical: 4 }} onPress={() => themeStore.toggleTheme()}>TOGGLE THEME</Button>
         </Layout>
     );
 }

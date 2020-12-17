@@ -10,11 +10,6 @@ const styles = (theme) => StyleSheet.create({
     },
     divider: {
         marginBottom: 18
-    },
-    dark: {
-        backgroundColor: theme['color-basic-800'],
-        borderBottomColor: theme['color-basic-1000'],
-        borderWidth: 1
     }
 });
 

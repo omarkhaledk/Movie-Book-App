@@ -6,7 +6,6 @@ class UserStore {
     constructor() {
         makeObservable(this, {
             user: observable,
-            getUser: computed,
             setUser: action
         });
         this.user = {}
@@ -14,10 +13,6 @@ class UserStore {
 
     setUser(user) {
         this.user = user;
-    }
-
-    get getUser() {
-        return this.user;
     }
 }
 
