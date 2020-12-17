@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { ThemeContext } from '../../theme-context';
+import { observer } from 'mobx-react-lite';
+
 import { Button, Layout, Text, withStyles } from '@ui-kitten/components';
 import styles from "./home.style";
 
-const HomeScreen = ({ navigation, eva }) => {
+const HomeScreen = ({ eva }) => {
 
     const themeContext = React.useContext(ThemeContext);
 
@@ -18,4 +20,4 @@ const HomeScreen = ({ navigation, eva }) => {
     );
 }
 
-export default withStyles(HomeScreen, styles);
+export default withStyles(observer(HomeScreen), styles);

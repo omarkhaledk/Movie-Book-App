@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { observer } from 'mobx-react-lite';
 import { Image, View } from 'react-native';
 import { Text, Layout, withStyles } from '@ui-kitten/components';
 
@@ -7,8 +8,7 @@ import styles from './contact-information.style';
 
 const profilePic = require('../../assets/profile-pic.jpg');
 
-const ContactInfo = ({ navigation, state, eva }) => {
-
+const ContactInfo = ({ eva }) => {
     const { style } = eva;
 
     return (
@@ -22,4 +22,4 @@ const ContactInfo = ({ navigation, state, eva }) => {
     )
 }
 
-export default withStyles(ContactInfo, styles)
+export default withStyles(observer(ContactInfo), styles)
