@@ -7,6 +7,7 @@ import { observer } from 'mobx-react'
 
 import Router from './router/router';
 import * as stores from './stores';
+import Translate from './services/translation-service/translation-service';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
     <React.Fragment>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={eva[themeStore.theme]}>
-        <Router stores={stores} />
+        <Router stores={stores} Translate={Translate} />
       </ApplicationProvider>
     </React.Fragment>
   );

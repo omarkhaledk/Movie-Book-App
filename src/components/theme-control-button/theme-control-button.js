@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 
 import { Toggle } from '@ui-kitten/components';
 
-const ThemeChanging = ({ stores }) => {
+const ThemeControlButton = ({ stores }) => {
     const { themeStore } = stores;
     const isDarkTheme = themeStore.theme === 'dark';
 
@@ -18,4 +18,4 @@ const ThemeChanging = ({ stores }) => {
     )
 }
 
-export default observer(ThemeChanging);
+export default observer(ThemeControlButton);

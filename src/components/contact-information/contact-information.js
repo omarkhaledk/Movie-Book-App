@@ -8,14 +8,14 @@ import styles from './contact-information.style';
 
 const profilePic = require('../../../assets/profile-pic.jpg');
 
-const ContactInfo = ({ eva }) => {
+const ContactInfo = ({ eva, stores, Translate }) => {
     const { style } = eva;
 
     return (
         <Layout style={style.container}>
             <Image style={style.profilePic} source={profilePic} />
             <View style={style.padding10}></View>
-            <Text>Name</Text>
+            <Text>{Translate('name')}</Text>
             <View style={style.padding10}></View>
             <Text>Email</Text>
         </Layout>

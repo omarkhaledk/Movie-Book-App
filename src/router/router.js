@@ -19,14 +19,14 @@ const SCREENS = [
 ];
 
 function AppContainer(props) {
-    const { eva: { theme }, stores: { themeStore } } = props;
+    const { eva: { theme }, stores: { themeStore }, Translate } = props;
 
     const isDarkTheme = themeStore.theme === 'dark';
 
     return (
         <NavigationContainer>
             <Navigator
-                drawerContent={contentProps => <DrawerContent {...props} {...contentProps} SCREENS={SCREENS} />}
+                drawerContent={contentProps => <DrawerContent {...props} {...contentProps} Translate={Translate} SCREENS={SCREENS} />}
                 drawerType="slide"
                 initialRouteName={SCREENS[0].name}>
 
@@ -39,7 +39,7 @@ function AppContainer(props) {
                         headerTintColor: isDarkTheme ? theme['color-primary-100'] : theme['color-basic-1100']
                     }}
                 >
-                    {() => <s.component  {...props} />}
+                    {() => <s.component  {...props} Translate={Translate} />}
 
                 </Screen>)}
             </Navigator>

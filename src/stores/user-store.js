@@ -1,4 +1,4 @@
-import { makeObservable, observable, computed, action } from "mobx";
+import { makeObservable, observable, action } from "mobx";
 
 class UserStore {
     user
