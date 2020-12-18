@@ -7,12 +7,12 @@ import styles from './drawer-content.style';
 
 import ContactInfo from "../../components/contact-information/contact-information";
 
-const DrawerContent = ({ SCREENS, navigation, state, eva, stores, Translate }) => {
-    const { style } = eva;
+const DrawerContent = (props) => {
+    const { SCREENS, navigation, state, eva: { style } } = props;
 
     return (
         <Layout style={style.drawerContent}>
-            <ContactInfo stores={stores} Translate={Translate} />
+            <ContactInfo {...props} />
             <Divider style={style.divider} />
             <Drawer
                 selectedIndex={new IndexPath(state.index)}

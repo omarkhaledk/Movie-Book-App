@@ -8,7 +8,7 @@ const LanguageChangeButton = ({ stores: { translationStore }, Translate }) => {
 
     const onLangChange = (index) => {
         setSelectedIndex(index);
-        translationStore.toggleLang()
+        translationStore.toggleLang(index == 0 ? 'en' : 'ar')
     }
 
     return (

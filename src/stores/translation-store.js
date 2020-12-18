@@ -11,8 +11,8 @@ class TranslationStore {
         this.lang = 'en'
     }
 
-    toggleLang() {
-        this.lang = this.lang === 'en' ? 'ar' : 'en';
+    toggleLang(lang) {
+        this.lang = lang;
     }
 }
 
