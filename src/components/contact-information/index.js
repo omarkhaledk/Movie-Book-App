@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 import { Image, View } from 'react-native';
 import { Text, Layout, withStyles } from '@ui-kitten/components';
 
-import styles from './contact-information.style';
+import styles from './styles';
 
 const profilePic = require('../../../assets/profile-pic.jpg');
 
@@ -15,9 +15,9 @@ const ContactInfo = ({ eva, stores, Translate }) => {
         <Layout style={style.container}>
             <Image style={style.profilePic} source={profilePic} />
             <View style={style.padding10}></View>
-            <Text>{Translate('name')}</Text>
+            <Text>{Translate('Name')}</Text>
             <View style={style.padding10}></View>
-            <Text>Email</Text>
+            <Text>{Translate('Email')}</Text>
         </Layout>
     )
 }

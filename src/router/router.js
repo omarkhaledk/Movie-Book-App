@@ -6,20 +6,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { observer } from 'mobx-react';
 
-import DrawerContent from './drawer-content/drawer-content';
-import ConversationsScreen from "../screens/conversations/conversations";
-import SettingsScreen from "../screens/settings/settings";
+import DrawerContent from './drawer-content';
+import ConversationsScreen from "../screens/conversations";
+import SettingsScreen from "../screens/settings";
 import { withStyles } from '@ui-kitten/components';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
 const SCREENS = [
-    { name: "Conversations", component: ConversationsScreen, isDrawerItem: true },
-    { name: "Settings", component: SettingsScreen, isDrawerItem: true }
+    { name: 'Conversations', component: ConversationsScreen, isDrawerItem: true },
+    { name: 'Settings', component: SettingsScreen, isDrawerItem: true }
 ];
 
 function AppContainer(props) {
-    const { eva: { theme }, stores: { themeStore } } = props;
+    const { eva: { theme }, stores: { themeStore }, Translate } = props;
 
     const isDarkTheme = themeStore.theme === 'dark';
 
@@ -31,7 +31,7 @@ function AppContainer(props) {
                 initialRouteName={SCREENS[0].name}>
 
                 {SCREENS.map(s => <Screen
-                    name={s.name}
+                    name={Translate(s.name) || s.name}
                     key={s.name}
                     options={{
                         headerShown: true,

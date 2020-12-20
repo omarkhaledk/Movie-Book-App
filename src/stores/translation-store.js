@@ -1,10 +1,13 @@
 import { makeObservable, observable, action } from "mobx";
 import { NativeModules } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import supportedLanguages from '../constants/supported-languages';
+
+const deviceLocale = supportedLanguages[NativeModules.I18nManager.localeIdentifier.substring(0, 2)];
 
 class TranslationStore {
     lang
-    systemLang = NativeModules.I18nManager.localeIdentifier.includes('en') ? 'en' : 'ar'
+    deviceLang = (deviceLocale && deviceLocale.id) || 'en'
 
     constructor() {
         makeObservable(this, {
@@ -12,7 +15,7 @@ class TranslationStore {
             changeLang: action
         });
 
-        this.getSavedLang().then(result => this.changeLang(result || this.systemLang));
+        this.getSavedLang().then(result => this.changeLang(result || this.deviceLang));
     }
 
     getSavedLang = async () => {

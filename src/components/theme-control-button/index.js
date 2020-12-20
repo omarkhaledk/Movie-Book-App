@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 
 import { Toggle } from '@ui-kitten/components';
 
-const ThemeControlButton = ({ stores }) => {
+const ThemeControlButton = ({ stores, Translate }) => {
     const { themeStore } = stores;
     const isDarkTheme = themeStore.theme === 'dark';
 
@@ -13,7 +13,7 @@ const ThemeControlButton = ({ stores }) => {
             status='primary'
             checked={isDarkTheme}
             onChange={() => themeStore.toggleTheme()}>
-            Dark Theme
+            {Translate('Dark-Theme')}
         </Toggle>
     )
 }

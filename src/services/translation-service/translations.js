@@ -1,15 +1,11 @@
-const en = {
-    welcome: 'Hello',
-    name: 'Omar',
-    English: 'English',
-    Arabic: 'Arabic'
-};
+const translations = {
+    Welcome: { en: 'Welcome', ar: 'اهلا' },
+    Name: { en: 'Omar', ar: 'عمر' },
+    Conversations: { en: 'Conversations', ar: 'المحادثات' },
+    Settings: { en: 'Settings', ar: 'الاعدادات' },
+    Email: { en: 'Email', ar: 'البريد الالكتروني' },
+    Language: { en: 'Language', ar: 'اللغة' },
+    'Dark-Theme': { en: 'Dark Theme', ar: 'سمة داكنة' }
+}
 
-const ar = {
-    welcome: 'اهلا',
-    name: 'عمر',
-    English: 'الانكليزية',
-    Arabic: 'العربية'
-};
-
-export default { en, ar };
+export default translations;

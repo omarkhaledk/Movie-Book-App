@@ -3,10 +3,10 @@ import React from 'react';
 import { Layout, withStyles, Divider } from '@ui-kitten/components';
 import { View } from 'react-native';
 
-import styles from './settings.style';
+import styles from './styles';
 
-import ThemeControlButton from '../../components/theme-control-button/theme-control-button';
-import LanguageControlButton from '../../components/language-control-button/language-control-button';
+import ThemeControlButton from '../../components/theme-control-button';
+import LanguageControlButton from '../../components/language-control-button';
 
 const SettingsScreen = (props) => {
     const { eva: { style } } = props;
