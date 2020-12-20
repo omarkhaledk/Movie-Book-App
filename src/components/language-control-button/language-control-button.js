@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Radio, RadioGroup, Text, Layout } from '@ui-kitten/components';
 import { observer } from 'mobx-react-lite';
 
-const LanguageChangeButton = ({ stores: { translationStore }, Translate }) => {
+const LanguageChangeButton = ({ stores: { translationStore }, ChangeLanguage,...rest }) => {
     const [selectedIndex, setSelectedIndex] = useState(translationStore.lang === 'en' ? 0 : 1);
 
     const onLangChange = (index) => {
         setSelectedIndex(index);
-        translationStore.toggleLang(index == 0 ? 'en' : 'ar')
+        ChangeLanguage(index == 0 ? 'en' : 'ar')
     }
 
     return (
@@ -17,8 +17,8 @@ const LanguageChangeButton = ({ stores: { translationStore }, Translate }) => {
             <RadioGroup
                 selectedIndex={selectedIndex}
                 onChange={index => onLangChange(index)}>
-                <Radio>{Translate('English')}</Radio>
-                <Radio>{Translate('Arabic')}</Radio>
+                <Radio>English</Radio>
+                <Radio>العربية</Radio>
             </RadioGroup>
         </Layout>
     )
