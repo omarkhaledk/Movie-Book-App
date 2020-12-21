@@ -7,7 +7,7 @@ import { observer } from 'mobx-react'
 
 import Router from './router/router';
 import * as stores from './stores';
-import * as TranslationService from './services/translation-service';
+import * as TranslationService from './services/multilingual-support/translation-service';
 
 function App() {
 

@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import styles from './styles';
 
-import ContactInfo from "../../components/contact-information";
+import ContactInfo from "../contact-information";
 
 const DrawerContent = (props) => {
     const { SCREENS, navigation, state, eva: { style }, Translate } = props;

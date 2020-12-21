@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 
 import { Radio, RadioGroup, Text, Layout } from '@ui-kitten/components';
 import { observer } from 'mobx-react-lite';
+import { languagesArr } from '../../constants/supported-languages';
 
 const LanguageChangeButton = ({ stores: { translationStore }, ChangeLanguage, Translate }) => {
-    const [selectedIndex, setSelectedIndex] = useState(translationStore.lang === 'en' ? 0 : 1);
+    const [selectedIndex, setSelectedIndex] = useState(languagesArr.findIndex(lang => lang.id === translationStore.lang) || 0);
 
     const onLangChange = (index) => {
         setSelectedIndex(index);
-        ChangeLanguage(index == 0 ? 'en' : 'ar')
+        ChangeLanguage(languagesArr[index].id)
     }
 
     return (
@@ -17,8 +18,7 @@ const LanguageChangeButton = ({ stores: { translationStore }, ChangeLanguage, Tr
             <RadioGroup
                 selectedIndex={selectedIndex}
                 onChange={index => onLangChange(index)}>
-                <Radio>English</Radio>
-                <Radio>العربية</Radio>
+                {languagesArr.map(lang => <Radio key={lang.id}>{lang.name}</Radio>)}
             </RadioGroup>
         </Layout>
     )

@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { observer } from 'mobx-react';
 
-import DrawerContent from './drawer-content';
+import DrawerContent from '../components/drawer-content';
 import ConversationsScreen from "../screens/conversations";
 import SettingsScreen from "../screens/settings";
 import { withStyles } from '@ui-kitten/components';

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { observer } from 'mobx-react-lite';
 
-import { Button, Layout, Text, withStyles } from '@ui-kitten/components';
+import { Layout, Text, withStyles } from '@ui-kitten/components';
 import styles from "./styles";
 
 const ConversationsScreen = ({ eva, stores, Translate }) => {
