@@ -1,4 +1,5 @@
 import { makeObservable, observable, action } from "mobx";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class ThemeStore {
     theme
@@ -6,13 +7,30 @@ class ThemeStore {
     constructor() {
         makeObservable(this, {
             theme: observable,
-            toggleTheme: action
+            setTheme: action
         });
-        this.theme = 'light';
+
+        this.getSavedTheme().then(result => {
+            this.setTheme(result || 'systemDefault');
+        })
     }
 
-    toggleTheme() {
-        this.theme = this.theme === 'light' ? 'dark' : 'light';
+    getSavedTheme = async () => {
+        try {
+            const theme = await AsyncStorage.getItem('theme');
+            return theme;
+        } catch (e) {
+            return Promise.resolve(null);
+        }
+    }
+
+    setTheme(theme, isButton) {
+        this.theme = theme;
+        if (isButton) this.saveTheme(theme);
+    }
+
+    async saveTheme(theme) {
+        await AsyncStorage.setItem('theme', theme);
     }
 }
 

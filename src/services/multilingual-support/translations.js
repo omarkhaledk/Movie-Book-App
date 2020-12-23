@@ -5,7 +5,9 @@ const translations = {
     Settings: { en: 'Settings', ar: 'الاعدادات' },
     Email: { en: 'Email', ar: 'البريد الالكتروني' },
     Language: { en: 'Language', ar: 'اللغة' },
-    'Dark-Theme': { en: 'Dark Theme', ar: 'سمة داكنة' }
+    light: { en: 'Light', ar: 'فاتح' },
+    dark: { en: 'Dark', ar: 'داكن' },
+    systemDefault: { en: 'System Default', ar: 'سمة النظام' }
 }
 
 export default translations;

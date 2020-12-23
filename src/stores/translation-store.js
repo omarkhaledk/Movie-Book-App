@@ -23,7 +23,7 @@ class TranslationStore {
             const lang = await AsyncStorage.getItem('lang');
             return lang;
         } catch (e) {
-            return null;
+            return Promise.resolve(null);
         }
     }
 

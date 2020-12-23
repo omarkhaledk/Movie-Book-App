@@ -2,19 +2,23 @@ import React from 'react';
 
 import { observer } from 'mobx-react-lite';
 
-import { Toggle } from '@ui-kitten/components';
+import { RadioGroup, Radio } from '@ui-kitten/components';
+import { themesArr } from '../../constants/app-themes';
 
-const ThemeControlButton = ({ stores, Translate }) => {
-    const { themeStore } = stores;
-    const isDarkTheme = themeStore.theme === 'dark';
+const ThemeControlButton = ({ stores: { themeStore }, Translate }) => {
+
+    const onThemeChange = (index) => {
+        themeStore.setTheme(themesArr[index], true);
+    }
+
+    const themeIndex = themesArr.findIndex(x => x == themeStore.theme);
 
     return (
-        <Toggle
-            status='primary'
-            checked={isDarkTheme}
-            onChange={() => themeStore.toggleTheme()}>
-            {Translate('Dark-Theme')}
-        </Toggle>
+        <RadioGroup
+            selectedIndex={themeIndex}
+            onChange={index => onThemeChange(index)}>
+            {themesArr.map(t => <Radio key={t}>{Translate(t)}</Radio>)}
+        </RadioGroup >
     )
 }
 
