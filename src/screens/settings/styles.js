@@ -2,13 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = (theme) => StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
+        flex: 1
     },
 
     item: {
-        padding: 12
+        padding: 16,
+        width: '100%',
+        height: 54
     },
 
     divider: {
