@@ -20,7 +20,7 @@ function App() {
     <React.Fragment>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={eva[theme == 'systemDefault' ? deviceTheme : theme || themes[0]]}>
-        <Router stores={stores} {...TranslationService} />
+        {theme && <Router stores={stores} {...TranslationService} />}
       </ApplicationProvider>
     </React.Fragment>
   );
