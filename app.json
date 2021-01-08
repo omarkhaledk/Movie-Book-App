@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Light Chat",
-    "slug": "LightChat",
+    "name": "HeyChat",
+    "slug": "HeyChat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
