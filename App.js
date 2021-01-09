@@ -6,10 +6,10 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { observer } from 'mobx-react'
 import { Appearance } from 'react-native';
 
-import Router from './router/router';
-import * as stores from './stores';
-import * as TranslationService from './services/multilingual-support/translation-service';
-import themes from './constants/app-themes';
+import Router from './src/router/router';
+import * as stores from './src/stores';
+import * as TranslationService from './src/services/multilingual-support/translation-service';
+import themes from './src/constants/app-themes';
 
 function App() {
   const { themeStore: { theme } } = stores;

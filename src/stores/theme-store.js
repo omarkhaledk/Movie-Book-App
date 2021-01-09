@@ -2,7 +2,7 @@ import { makeObservable, observable, action } from "mobx";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class ThemeStore {
-    theme
+    theme = 'light'
 
     constructor() {
         makeObservable(this, {

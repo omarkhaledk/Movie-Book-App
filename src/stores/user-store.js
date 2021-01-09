@@ -1,7 +1,7 @@
 import { makeObservable, observable, action } from "mobx";
 
 class UserStore {
-    user
+    user = {}
 
     constructor() {
         makeObservable(this, {

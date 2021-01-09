@@ -6,7 +6,7 @@ import supportedLanguages from '../constants/supported-languages';
 const deviceLocale = supportedLanguages[NativeModules.I18nManager.localeIdentifier.substring(0, 2)];
 
 class TranslationStore {
-    lang
+    lang = 'en'
     deviceLang = (deviceLocale && deviceLocale.id) || 'en'
 
     constructor() {
