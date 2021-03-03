@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "FollowersTracker",
-    "slug": "FollowersTracker",
+    "name": "MovieBook",
+    "slug": "MovieBook",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
