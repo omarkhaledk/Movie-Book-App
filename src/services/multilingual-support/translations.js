@@ -8,7 +8,11 @@ const translations = {
     theme: { en: 'Theme', ar: 'السمة' },
     light: { en: 'Light', ar: 'فاتح' },
     dark: { en: 'Dark', ar: 'داكن' },
-    systemDefault: { en: 'System Default', ar: 'سمة النظام' }
+    systemDefault: { en: 'System Default', ar: 'سمة النظام' },
+    errorOccurredTryAgain: {
+        en: 'An error has occurred. Please try again',
+        ar: 'حدث خطأ. يرجى اعادة المحاولة'
+    }
 }
 
 export default translations;

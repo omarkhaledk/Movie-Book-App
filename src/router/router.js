@@ -5,11 +5,11 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { observer } from 'mobx-react';
+import { withStyles } from '@ui-kitten/components';
 
 import DrawerContent from '../components/drawer-content';
 import HomeScreen from "../screens/home";
 import SettingsScreen from "../screens/settings";
-import { withStyles } from '@ui-kitten/components';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
@@ -42,6 +42,7 @@ function AppContainer(props) {
                     {() => <s.component {...props} />}
 
                 </Screen>)}
+
             </Navigator>
         </NavigationContainer>
     );

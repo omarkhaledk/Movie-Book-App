@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { observer } from 'mobx-react-lite';
 
-import { RefreshControl, SafeAreaView, ScrollView } from 'react-native';
+import { RefreshControl, ScrollView } from 'react-native';
 import { Layout, Text, withStyles, Spinner } from '@ui-kitten/components';
 import styles from "./styles";
 
@@ -11,6 +11,7 @@ import { getTrending } from "../../api";
 const HomeScreen = ({ eva, stores, Translate }) => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState();
+    const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
         let mounted = true;
@@ -19,39 +20,46 @@ const HomeScreen = ({ eva, stores, Translate }) => {
         return () => mounted = false
     }, []);
 
-    const getData = () => {
-        setLoading(true);
+    const getData = (isRefresh) => {
 
-        return getTrending().then(async response => {
+        if (isRefresh) setRefreshing(true);
+        else setLoading(true);
+
+        return getTrending().then(response => {
             console.log('response', response)
             setData(response);
-        }).catch(err => err
-        ).finally(() => {
+        }).catch(err => {
+            throw err;
+        }).finally(() => {
             setLoading(false);
+            setRefreshing(false);
         })
     }
 
+    const onRefresh = () => getData(true);
+
     const { style } = eva;
+
+    if (loading) {
+        return <Layout style={style.spinnerContainer}><Spinner /></Layout>
+    }
 
     return (
         <Layout style={style.container}>
-            {/* <SafeAreaView style={{...style.container}}> */}
 
             <ScrollView
-                contentContainerStyle={{ flex: 1 }}
+                contentContainerStyle={style.scrollView}
                 refreshControl={
                     <RefreshControl
-                        refreshing={loading}
-                        onRefresh={getData}
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
                     />
                 }
             >
-                {loading
-                    ? <Spinner />
-                    : <Text>{Translate('Home')}</Text>}
+                <Text>{Translate('Home')}</Text>
+
             </ScrollView>
 
-            {/* </SafeAreaView> */}
         </Layout>
     );
 }

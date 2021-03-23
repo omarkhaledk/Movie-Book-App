@@ -1,8 +1,15 @@
 import axios from "axios";
-import { API_KEY } from "../constants/config"
+import { API_KEY, API_GATEWAY } from "../constants/config";
+
+import { apiStore } from '../stores';
+
+axios.interceptors.response.use((response => response), error => {
+    apiStore.setErrorState(true);
+    throw error;
+})
 
 export const getTrending = () => {
-    return axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`).then(response => {
+    return axios.get(`${API_GATEWAY}/trending/all/day?api_key=${API_KEY}`).then(response => {
         if (response.status == 200) {
             return response.data;
         }
