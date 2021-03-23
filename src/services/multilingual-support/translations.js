@@ -1,7 +1,7 @@
 const translations = {
     Welcome: { en: 'Welcome', ar: 'اهلا' },
     Name: { en: 'Omar', ar: 'عمر' },
-    Conversations: { en: 'Conversations', ar: 'المحادثات' },
+    Home: { en: 'Home', ar: 'الرئيسية' },
     Settings: { en: 'Settings', ar: 'الاعدادات' },
     Email: { en: 'Email', ar: 'البريد الالكتروني' },
     Language: { en: 'Language', ar: 'اللغة' },
