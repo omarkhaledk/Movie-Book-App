@@ -4,11 +4,13 @@ import { observer } from 'mobx-react-lite';
 
 import { RefreshControl, ScrollView } from 'react-native';
 import { Layout, Text, withStyles, Spinner } from '@ui-kitten/components';
+import SliderSection from "../../components/slider";
+
 import styles from "./styles";
 
 import { getTrending } from "../../api";
 
-const HomeScreen = ({ eva, stores, Translate }) => {
+const HomeScreen = ({ eva }) => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState();
     const [refreshing, setRefreshing] = useState(false);
@@ -56,8 +58,7 @@ const HomeScreen = ({ eva, stores, Translate }) => {
                     />
                 }
             >
-                <Text>{Translate('Home')}</Text>
-
+                <SliderSection data={data} />
             </ScrollView>
 
         </Layout>

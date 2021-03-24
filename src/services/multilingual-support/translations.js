@@ -12,6 +12,14 @@ const translations = {
     errorOccurredTryAgain: {
         en: 'An error has occurred. Please try again',
         ar: 'حدث خطأ. يرجى اعادة المحاولة'
+    },
+    'Trending-Now': {
+        en: 'Trending Now',
+        ar: "شائع الان"
+    },
+    'View-All': {
+        en: 'View All',
+        ar: 'عرض الكل'
     }
 }
 
