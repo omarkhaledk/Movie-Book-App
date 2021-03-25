@@ -10,15 +10,14 @@ import { withStyles } from '@ui-kitten/components';
 import DrawerContent from '../components/drawer-content';
 import HomeScreen from "../screens/home";
 import SettingsScreen from "../screens/settings";
-import SliderSection from '../components/slider';
 import MediaDetails from '../screens/media-details';
+import BackButton from '../components/header-back-button';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
 const SCREENS = [
     { name: 'Home', component: HomeScreen, isDrawerItem: true },
     { name: 'Settings', component: SettingsScreen, isDrawerItem: true },
-    { name: 'SliderSection', component: SliderSection },
     { name: 'MediaDetails', component: MediaDetails },
 ];
 
@@ -35,9 +34,11 @@ function AppContainer(props) {
                 initialRouteName={SCREENS[0].name}>
 
                 {SCREENS.map(s => <Screen
-                    name={Translate(s.name) || s.name}
+                    name={s.name}
                     key={s.name}
                     options={{
+                        headerLeft: !s.isDrawerItem ? () => <BackButton /> : null,
+                        title: Translate(s.name) || s.name,
                         headerShown: true,
                         headerStyle: isDarkTheme ? style(theme).dark : {},
                         headerTintColor: isDarkTheme ? theme['color-primary-100'] : theme['color-basic-1100'],

@@ -24,6 +24,10 @@ const translations = {
     'View-All': {
         en: 'View All',
         ar: 'عرض الكل'
+    },
+    MediaDetails: {
+        en: "Details",
+        ar: "التفاصيل"
     }
 }
 

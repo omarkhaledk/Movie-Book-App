@@ -18,7 +18,9 @@ const DrawerContent = (props) => {
                 selectedIndex={new IndexPath(state.index)}
                 onSelect={index => navigation.navigate(state.routeNames[index.row])}>
                 {SCREENS.map(s => s.isDrawerItem
-                    ? <DrawerItem title={props => <Text {...props} style={style.drawerItem}>{Translate(s.name)}</Text>} key={s.name} />
+                    ? <DrawerItem
+                        title={drawerProps => <Text {...drawerProps} {...props} style={style.drawerItem}>{Translate(s.name)}</Text>}
+                        key={s.name} />
                     : <View key={s.name}></View>)}
             </Drawer>
         </Layout >

@@ -16,7 +16,7 @@ const styles = (theme) => StyleSheet.create({
         alignItems: 'center',
         paddingLeft: isRTL ? undefined : 10,
         paddingRight: isRTL ? 10 : undefined,
-        marginBottom: -8,
+        // marginBottom: -8,
         marginRight: isRTL ? undefined : -10,
         marginLeft: isRTL ? -10 : undefined
     },
