@@ -10,12 +10,16 @@ import { withStyles } from '@ui-kitten/components';
 import DrawerContent from '../components/drawer-content';
 import HomeScreen from "../screens/home";
 import SettingsScreen from "../screens/settings";
+import SliderSection from '../components/slider';
+import MediaDetails from '../screens/media-details';
 
 const { Navigator, Screen } = createDrawerNavigator();
 
 const SCREENS = [
     { name: 'Home', component: HomeScreen, isDrawerItem: true },
-    { name: 'Settings', component: SettingsScreen, isDrawerItem: true }
+    { name: 'Settings', component: SettingsScreen, isDrawerItem: true },
+    { name: 'SliderSection', component: SliderSection },
+    { name: 'MediaDetails', component: MediaDetails },
 ];
 
 function AppContainer(props) {
@@ -39,7 +43,7 @@ function AppContainer(props) {
                         headerTintColor: isDarkTheme ? theme['color-primary-100'] : theme['color-basic-1100'],
                     }}
                 >
-                    {() => <s.component {...props} />}
+                    {screenProps => <s.component {...props} {...screenProps} />}
 
                 </Screen>)}
 

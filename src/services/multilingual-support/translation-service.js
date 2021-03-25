@@ -8,8 +8,7 @@ import * as Updates from 'expo-updates';
 
 const Translate = (text) => {
     const lang = translationStore.lang;
-    if (!text || !lang) return '';
-    if (!Translations[text]) return 'Translation not found';
+    if (!text || !lang || !Translations[text]) return '';
     return Translations[text][lang];
 }
 

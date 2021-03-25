@@ -10,10 +10,14 @@ import styles from "./styles";
 
 import { getTrending } from "../../api";
 
-const HomeScreen = ({ eva }) => {
+const HomeScreen = (props) => {
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState();
+    const [movies, setMovies] = useState({});
+    const [shows, setShows] = useState({});
     const [refreshing, setRefreshing] = useState(false);
+
+    const getTrendingMovies = () => getTrending('movie', 'day');
+    const getTrendingShows = () => getTrending('tv', 'day');
 
     useEffect(() => {
         let mounted = true;
@@ -27,9 +31,11 @@ const HomeScreen = ({ eva }) => {
         if (isRefresh) setRefreshing(true);
         else setLoading(true);
 
-        return getTrending().then(response => {
-            console.log('response', response)
-            setData(response);
+        const promises = [getTrendingMovies(), getTrendingShows()];
+
+        return Promise.all(promises).then(response => {
+            setMovies(response[0]);
+            setShows(response[1]);
         }).catch(err => {
             throw err;
         }).finally(() => {
@@ -40,7 +46,7 @@ const HomeScreen = ({ eva }) => {
 
     const onRefresh = () => getData(true);
 
-    const { style } = eva;
+    const { style } = props.eva;
 
     if (loading) {
         return <Layout style={style.spinnerContainer}><Spinner /></Layout>
@@ -58,7 +64,8 @@ const HomeScreen = ({ eva }) => {
                     />
                 }
             >
-                <SliderSection data={data} />
+                <SliderSection {...props} data={movies.results} title="Trending-Movies" />
+                <SliderSection {...props} data={shows.results} title="Trending-Shows" />
             </ScrollView>
 
         </Layout>

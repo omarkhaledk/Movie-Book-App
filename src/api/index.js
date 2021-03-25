@@ -8,8 +8,8 @@ axios.interceptors.response.use((response => response), error => {
     throw error;
 })
 
-export const getTrending = () => {
-    return axios.get(`${API_GATEWAY}/trending/all/day?api_key=${API_KEY}`).then(response => {
+export const getTrending = (mediaType, timeWindow) => {
+    return axios.get(`${API_GATEWAY}/trending/${mediaType}/${timeWindow}?api_key=${API_KEY}`).then(response => {
         if (response.status == 200) {
             return response.data;
         }

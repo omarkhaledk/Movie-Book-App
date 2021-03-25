@@ -13,9 +13,13 @@ const translations = {
         en: 'An error has occurred. Please try again',
         ar: 'حدث خطأ. يرجى اعادة المحاولة'
     },
-    'Trending-Now': {
-        en: 'Trending Now',
-        ar: "شائع الان"
+    'Trending-Movies': {
+        en: 'Trending Movies',
+        ar: "الافلام الشائعة"
+    },
+    'Trending-Shows': {
+        en: 'Trending Shows',
+        ar: 'برامج شائعة'
     },
     'View-All': {
         en: 'View All',
