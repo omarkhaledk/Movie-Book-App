@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@eva-design/eva": "^2.0.0",
-    "@react-native-async-storage/async-storage": "^1.13.2",
+    "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/drawer": "^5.11.4",
@@ -18,20 +18,20 @@
     "@ui-kitten/components": "^5.0.0",
     "@ui-kitten/eva-icons": "^5.0.0",
     "axios": "^0.21.1",
-    "expo": "~39.0.2",
-    "expo-status-bar": "~1.0.2",
-    "expo-updates": "~0.3.3",
+    "expo": "^42.0.0",
+    "expo-status-bar": "~1.0.4",
+    "expo-updates": "~0.8.2",
     "mobx": "^6.0.4",
     "mobx-react": "^7.0.5",
     "mobx-react-lite": "^3.1.6",
-    "react": "^17.0.1",
+    "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-    "react-native-gesture-handler": "~1.7.0",
-    "react-native-reanimated": "~1.13.0",
-    "react-native-safe-area-context": "3.1.4",
-    "react-native-screens": "~2.10.1",
-    "react-native-svg": "12.1.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "~3.4.0",
+    "react-native-svg": "12.1.1",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
-    "typescript": "~3.9.5"
+    "typescript": "~4.0.0"
   },
   "private": true
 }
