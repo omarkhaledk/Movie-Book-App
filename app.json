@@ -25,7 +25,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.myFictionalCompany.movieBook",
-      "versionCode": "1.0.1"
+      "versionCode": 1.1
     },
     "web": {
       "favicon": "./assets/favicon.png"
